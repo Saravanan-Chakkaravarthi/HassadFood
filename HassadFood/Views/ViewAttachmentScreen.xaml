@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             xmlns:controls="clr-namespace:HassadFood;assembly=HassadFood" 
+             xmlns:controlstrns="clr-namespace:HassadFood.Resx;assembly=HassadFood"
+             Title="Attachments"
+             x:Class="HassadFood.Views.ViewAttachmentScreen">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="5" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <AbsoluteLayout x:Name="ActivityLayout" IsVisible="false" HorizontalOptions="Center" WidthRequest="15" Padding="0,0,10,0" VerticalOptions="Center" HeightRequest="15">
+                <ActivityIndicator WidthRequest="15" HeightRequest="15" x:Name="ActivityLoader" IsRunning="false" IsVisible="false" HorizontalOptions="Center" />
+            </AbsoluteLayout>
+            <StackLayout Padding="10" x:Name="DowloadView" IsVisible="false" Spacing="10">
+                <Label x:Name="DownloadPath" FontSize="14" />
+                <Button x:Name="OpenBtn" IsVisible="false" Text="Open" IsEnabled="false" 
+            BackgroundColor="#5f6f50" HorizontalOptions="Center" FontSize="14" 
+            TextColor="White" BorderRadius="0" />
+            </StackLayout>
+            <WebView x:Name="WebVwAttachments" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

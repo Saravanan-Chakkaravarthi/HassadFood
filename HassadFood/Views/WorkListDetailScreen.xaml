@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             Title="Details"
+             xmlns:controls="clr-namespace:HassadFood;assembly=HassadFood" 
+             xmlns:controlstrns="clr-namespace:HassadFood.Resx;assembly=HassadFood" 
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             ios:Page.UseSafeArea="true"
+             x:Class="HassadFood.Views.WorkListDetailScreen">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView VerticalOptions="FillAndExpand">
+             <StackLayout x:Name="DetailsStack" Orientation="Vertical" Spacing="15" Padding="10">
+                <AbsoluteLayout IsVisible="{Binding IsListBusy}" HorizontalOptions="Center" WidthRequest="15" Padding="0,0,10,0" VerticalOptions="Center" HeightRequest="15">
+                    <ActivityIndicator WidthRequest="15" HeightRequest="15" HorizontalOptions="Center" IsRunning="{Binding IsListBusy}" IsVisible="{Binding IsListBusy}" />
+                </AbsoluteLayout>
+                <StackLayout Orientation="Horizontal"  HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+                    <Label Text="Notification ID: " FontSize="14" TextColor="#229ed8" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" LineBreakMode="NoWrap"  />
+                    <Label Text="{Binding SelectedItemWorkList.notification_id}" FontSize="14" TextColor="Black" HorizontalOptions="FillAndExpand" LineBreakMode="WordWrap"  />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"  HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+                    <Label Text="From: " FontSize="14" TextColor="#229ed8" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" LineBreakMode="NoWrap"  />
+                    <Label Text="{Binding SelectedItemWorkList.from_user}" FontSize="14" TextColor="Black" HorizontalOptions="FillAndExpand" LineBreakMode="WordWrap"  />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"  HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+                    <Label Text="To : " FontSize="14" TextColor="#229ed8" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" LineBreakMode="NoWrap"  />
+                    <Label Text="{Binding SelectedItemWorkList.to_user}" FontSize="14" TextColor="Black" HorizontalOptions="FillAndExpand" LineBreakMode="WordWrap"  />
+                </StackLayout>
+                <StackLayout Orientation="Vertical"  HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+                    <Label Text="Description: " FontSize="14" TextColor="#229ed8" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" LineBreakMode="NoWrap"  />
+                    <Label Text="{Binding SelectedItemWorkList.subject}" FontSize="14" TextColor="Black" HorizontalOptions="FillAndExpand" LineBreakMode="WordWrap"  />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"  HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+                    <Label Text="Sent Date: " FontSize="14" TextColor="#229ed8" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" LineBreakMode="NoWrap"  />
+                    <Label Text="{Binding SelectedItemWorkList.begin_date}" FontSize="14" TextColor="Black" HorizontalOptions="FillAndExpand" LineBreakMode="WordWrap"  />
+                </StackLayout>
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                    <Label Text="Comments: " FontSize="14" TextColor="#229ed8" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" LineBreakMode="NoWrap"  />
+                    <controls:CustomEntry FontSize="16" Text="{Binding Path=Comments}" HorizontalOptions="FillAndExpand" Placeholder="Type Comments" />      
+                </StackLayout>    
+            </StackLayout>
+            </ScrollView>   
+             <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackLayout x:Name="ApproverView" IsVisible="false" Orientation="Horizontal" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="{controlstrns:Translate HeaderButtonColor}" >
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+<!--                        <ffimageloading:CachedImage VerticalOptions="Center" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" Source="ic_yes.png" />-->
+                        <Button Text="OK" FontSize="18" BorderWidth="0" BorderRadius="0" IsEnabled="{Binding IsNotBusy}" BackgroundColor="Transparent" TextColor="White" Command="{Binding SubmitCommand}" />
+                    </StackLayout>    
+                    <ActivityIndicator WidthRequest="15" HeightRequest="15" Color="White" IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" Margin="0,0,5,0" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding SubmitCommand}" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout x:Name="NotificationView1" IsVisible="false" Orientation="Horizontal" Grid.Column="0" Grid.Row="0" BackgroundColor="{controlstrns:Translate HeaderButtonColor}" >
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+<!--                        <ffimageloading:CachedImage VerticalOptions="Center" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" Source="ic_yes.png" />-->
+                        <Button Text="APPROVE" FontSize="18" BorderWidth="0" BorderRadius="0" IsEnabled="{Binding IsNotBusy}" BackgroundColor="Transparent" TextColor="White" Command="{Binding SubmitCommand}" />
+                    </StackLayout>    
+                    <ActivityIndicator WidthRequest="15" HeightRequest="15" Color="White" IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" Margin="0,0,5,0" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding SubmitCommand}" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout x:Name="NotificationView2" IsVisible="false" Orientation="Horizontal" Grid.Column="1" Grid.Row="0" BackgroundColor="#af1f24" >
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+<!--                        <ffimageloading:CachedImage VerticalOptions="Center" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" Source="ic_tick.png" />-->
+                        <Button Text="REJECT" FontSize="18" BorderWidth="0" BorderRadius="0" IsEnabled="{Binding IsNotRejectBusy}" BackgroundColor="Transparent" TextColor="White" Command="{Binding RejectCommand}" />
+                    </StackLayout>
+                    <ActivityIndicator WidthRequest="15" HeightRequest="15" Color="White" IsVisible="{Binding IsRejectBusy}" IsRunning="{Binding IsRejectBusy}" Margin="0,0,5,0" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding RejectCommand}" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <!--<StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="1" BackgroundColor="{controlstrns:Translate HeaderButtonColor}" >
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+                        <ffimageloading:CachedImage VerticalOptions="Center" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" Source="ic_reassign.png" />
+                        <Button Text="REASSIGN" FontSize="18" BorderWidth="0" BorderRadius="0" IsEnabled="{Binding IsNotBusy}" BackgroundColor="Transparent" TextColor="White" Command="{Binding SubmitCommand}" />
+                    </StackLayout>
+                    <ActivityIndicator WidthRequest="15" HeightRequest="15" Color="White" IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" Margin="0,0,5,0" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding SubmitCommand}" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="1" BackgroundColor="{controlstrns:Translate HeaderButtonColor}" >
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+                        <ffimageloading:CachedImage VerticalOptions="Center" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" Source="ic_request.png" />
+                        <Button Text="REQUEST" FontSize="18" BorderWidth="0" BorderRadius="0" IsEnabled="{Binding IsNotBusy}" BackgroundColor="Transparent" TextColor="White" Command="{Binding SubmitCommand}" />
+                    </StackLayout>
+                    <ActivityIndicator WidthRequest="15" HeightRequest="15" Color="White" IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" Margin="0,0,5,0" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding SubmitCommand}" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>-->
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

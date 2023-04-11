@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:HassadFood;assembly=HassadFood" 
+             Title="{controlstrns:Translate CancellationRequest}"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             xmlns:controlstrns="clr-namespace:HassadFood.Resx;assembly=HassadFood"
+             x:Class="HassadFood.Views.LeaveCancellationRequestScreen">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand" Padding="10">
+                <StackLayout Orientation="Vertical">
+                    <Label Margin="0,5,0,0" Text="{controlstrns:Translate LeavetobeCancelled}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                    <StackLayout Orientation="Horizontal">
+                        <Picker IsEnabled="{Binding IsNotListBusy}" Title="Select Leave" HorizontalOptions="FillAndExpand" ItemsSource="{Binding GetLeaveAppliedDatesInformation.NewAppliedLeave}" SelectedItem="{Binding AppliedLeaveDates}" />
+                        <ActivityIndicator WidthRequest="15" HeightRequest="15" Color="{controlstrns:Translate HeaderButtonColor}" IsRunning="{Binding IsListBusy}" IsVisible="{Binding IsListBusy}" />
+                    </StackLayout>
+                    <Label Margin="0,5,0,0" Text="{controlstrns:Translate JustificationRq}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                    <controls:CustomEntry FontSize="16" Text="{Binding Path=Justification}" />  
+                    <Label Margin="0,5,0,0" Text="{controlstrns:Translate AdditionalComments}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                    <controls:CustomEntry FontSize="16" Text="{Binding Path=AdditionalComments}" />  
+                    <StackLayout Orientation="Horizontal">
+                        <Label Margin="0,5,0,0" Text="{controlstrns:Translate SubmissionDate}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                        <DatePicker Date="{Binding SubmissionDate}" Format="dd-MMM-yyyy" />
+                    </StackLayout>    
+                    <StackLayout Padding="0,0,0,0" Orientation="Horizontal">
+                        <Image Margin="0,5,0,0" HeightRequest="25" WidthRequest="25" Source="{Binding AddAttachmentsImage}" />
+                        <StackLayout WidthRequest="3" />
+                        <Label Margin="0,5,0,0" VerticalTextAlignment="Center" Text="Add Attachments" TextColor="#229ed8" FontSize="14" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding AddAttachmentsCommand}" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout IsVisible="{Binding AddAttachments}">
+                        <StackLayout Orientation="Horizontal" Padding="40,5,0,0" >
+                            <StackLayout Padding="0,0,0,0" Orientation="Horizontal">
+                                <Image Margin="0,5,0,0" HeightRequest="25" WidthRequest="25" Source="ic_camera.png" />
+                                <StackLayout WidthRequest="3" />
+                                <Label Margin="0,5,0,0" VerticalTextAlignment="Center" Text="Camera" TextColor="#229ed8" FontSize="14" />
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding CameraCommand}" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                            <StackLayout WidthRequest="20" />
+                            <StackLayout Padding="0,0,0,0" Orientation="Horizontal">
+                                <Image Margin="0,5,0,0" HeightRequest="25" WidthRequest="25" Source="ic_gallery.png" />
+                                <StackLayout WidthRequest="3" />
+                                <Label Margin="0,5,0,0" VerticalTextAlignment="Center" Text="Gallery" TextColor="#229ed8" FontSize="14" />
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding GalleryCommand}" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout IsVisible="{Binding Attachments1Visible}" Padding="40,0,0,0" Orientation="Horizontal">
+                            <Label Margin="0,5,0,0" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" Text="{Binding Attachments1}" TextColor="#229ed8" FontSize="14" />
+                            <Image Margin="0,5,10,0" HeightRequest="25" WidthRequest="25" Source="ic_delete_forever.png" >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Delete1Command}" />
+                                </Image.GestureRecognizers>
+                            </Image>    
+                        </StackLayout>
+                        <StackLayout IsVisible="{Binding Attachments2Visible}" Padding="40,0,0,0" Orientation="Horizontal">
+                            <Label Margin="0,5,0,0" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" Text="{Binding Attachments2}" TextColor="#229ed8" FontSize="14" />
+                            <Image Margin="0,5,10,0" HeightRequest="25" WidthRequest="25" Source="ic_delete_forever.png" >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Delete2Command}" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+                        <StackLayout IsVisible="{Binding Attachments3Visible}" Padding="40,0,0,0" Orientation="Horizontal">
+                            <Label Margin="0,5,0,0" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" Text="{Binding Attachments3}" TextColor="#229ed8" FontSize="14" />
+                            <Image Margin="0,5,10,0" HeightRequest="25" WidthRequest="25" Source="ic_delete_forever.png" >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Delete3Command}" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="{controlstrns:Translate HeaderButtonColor}" Margin="5">
+                <Button Text="{controlstrns:Translate Submit}" HorizontalOptions="CenterAndExpand" FontSize="18" BorderWidth="0" BorderRadius="0" IsEnabled="{Binding IsNotBusy}" BackgroundColor="Transparent" TextColor="White" Command="{Binding SubmitCommand}" />
+                <ActivityIndicator WidthRequest="15" HeightRequest="15" Color="White" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" Margin="0,0,5,0" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding SubmitCommand}" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout> 
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

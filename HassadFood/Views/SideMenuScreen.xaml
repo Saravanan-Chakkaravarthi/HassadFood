@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controlstrns="clr-namespace:HassadFood.Resx;assembly=HassadFood" 
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             x:Class="HassadFood.Views.SideMenuScreen">
+    <ContentPage.Content FlowDirection="{Binding Device.FlowDirection}">
+        <ContentView SizeChanged="OnContentViewSizeChanged">
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" BackgroundColor="White" HorizontalOptions="FillAndExpand" Padding="0" Spacing="0">
+                <StackLayout x:Name="UserNameView" BackgroundColor="{controlstrns:Translate HeaderButtonColor}">
+                    <Label x:Name="UserName" HorizontalOptions="CenterAndExpand" FontSize="Large" BackgroundColor="Transparent" TextColor="White" VerticalOptions="CenterAndExpand" Text="{Binding UserInformation.hf_user_auth[0].disp_name}" />
+                </StackLayout>
+                <ListView x:Name="SideMenuList" BackgroundColor="#f2f2f2" SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding Items, Mode=TwoWay}" IsGroupingEnabled="false" SeparatorVisibility="None" HasUnevenRows="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal" IsVisible="{Binding MainView}" BackgroundColor="#d0d5d8" Padding="20,10,10,10" Spacing="10">
+                                        <Label Text="{Binding MainTitle}" FontAttributes="Bold" FontSize="14" VerticalTextAlignment="Center" TextColor="Black" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" IsVisible="{Binding SubView}" Padding="20,10,10,10" Spacing="10">
+                                        <Image Aspect="AspectFill" Source="{Binding IconName}" />
+                                        <Label Text="{Binding Title}" FontSize="14" VerticalTextAlignment="Center" TextColor="Black" />
+                                    </StackLayout>
+                                </StackLayout>   
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                        <Label />
+                    </ListView.Footer>
+                </ListView>
+            </StackLayout>
+        </ContentView>
+    </ContentPage.Content>
+</ContentPage>

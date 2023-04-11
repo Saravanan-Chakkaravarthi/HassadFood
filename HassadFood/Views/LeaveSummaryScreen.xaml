@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controlstrns="clr-namespace:HassadFood.Resx;assembly=HassadFood"
+             Title="Request Status"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             x:Class="HassadFood.Views.LeaveSummaryScreen">
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem x:Name="balanceMenu" Name="Balance" Order="Primary" Priority="0" />-->
+<!--        <ToolbarItem x:Name="addMenu" Name="New" Order="Primary" Priority="0" />-->
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="10" Spacing="5">
+<!--            <Picker />-->
+            <ListView
+                x:Name="LeaveSummaryList"
+                ItemsSource="{Binding GetLeaveSitSummaryInformation.get_leave_sit_summary}"
+                SeparatorVisibility="Default"
+                VerticalOptions="FillAndExpand"
+                IsPullToRefreshEnabled="true"
+                RefreshCommand="{Binding RefreshCommand}" 
+                IsRefreshing="{Binding IsListBusy, Mode=OneWay}"
+                HorizontalOptions="StartAndExpand"
+                IsGroupingEnabled="False"
+                HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Spacing="4" Orientation="Vertical">
+                                <StackLayout Spacing="3" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                                    <Label Text="{Binding leave_type}"   TextColor="Black" LineBreakMode="NoWrap" FontSize="14" />
+                                    <!--<StackLayout Spacing="0" VerticalOptions="Center" Orientation="Horizontal">
+                                        <Label Text="{Binding start_date, StringFormat='{0:dd-MMM-yyyy}'}" VerticalTextAlignment="Center"   TextColor="Black" LineBreakMode="NoWrap" FontSize="14" />
+                                        <Label Text=" to "  VerticalTextAlignment="Center" TextColor="Black" LineBreakMode="NoWrap" FontSize="14" />
+                                        <Label Text="{Binding end_date, StringFormat='{0:dd-MMM-yyyy}'}" VerticalTextAlignment="Center"   TextColor="Black" LineBreakMode="NoWrap" FontSize="14" />
+                                    </StackLayout>-->
+                                    <Label Text="{Binding approval_status}"   TextColor="Black" LineBreakMode="NoWrap" FontSize="14" />
+                                    <StackLayout Spacing="0" VerticalOptions="Center" Orientation="Horizontal">
+                                        <Label Text="Approver: "  VerticalOptions="Center" TextColor="#229ed8" LineBreakMode="NoWrap" FontSize="14" />
+                                        <Label Text="{Binding approver_name}" TextColor="Black" VerticalOptions="Center" LineBreakMode="NoWrap" FontSize="14" />
+                                    </StackLayout>
+                                    <StackLayout Spacing="0" VerticalOptions="Center" Orientation="Horizontal">
+                                        <Label Text="Submission Date: "  VerticalOptions="Center" TextColor="#229ed8" LineBreakMode="NoWrap" FontSize="14" />
+                                        <Label Text="{Binding date_of_submission}" TextColor="Black" VerticalOptions="Center" LineBreakMode="NoWrap" FontSize="14" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                    <Label />
+                </ListView.Footer>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

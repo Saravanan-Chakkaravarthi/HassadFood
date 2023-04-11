@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:local="clr-namespace:HassadFood;assembly=HassadFood" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:controls="clr-namespace:HassadFood;assembly=HassadFood" 
+     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+     ios:Page.UseSafeArea="true"
+    xmlns:controlstrns="clr-namespace:HassadFood.Resx;assembly=HassadFood" 
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+    x:Class="HassadFood.Views.LoginPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid Padding="30" RowSpacing="0" VerticalOptions="FillAndExpand" BackgroundColor="Transparent">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Row="0" HeightRequest="20" />
+                    <ffimageloading:CachedImage Grid.Row="1" Margin="0,40,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit" WidthRequest="150" HeightRequest="90" Source="logo.png" />
+                    <StackLayout Grid.Row="2" >
+                        <StackLayout HeightRequest="40" />
+                        <StackLayout Orientation="Horizontal" IsVisible="false" FlowDirection="LeftToRight" Spacing="0" VerticalOptions="Center" HorizontalOptions="Center">
+                            <Label Text="En" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="{Binding EngLabelColor}" WidthRequest="50" HeightRequest="35" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding EngCommand}" />
+                                </Label.GestureRecognizers>
+                            </Label>    
+                            <Label Text="Ar" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="{Binding AraLabelColor}" WidthRequest="50" HeightRequest="35" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding AraCommand}" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                         <StackLayout HeightRequest="20" />    
+                        <StackLayout HorizontalOptions="Center" IsVisible="{Binding IsListBusy}" VerticalOptions="Center">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding FingerPrintCommand}" />
+                            </StackLayout.GestureRecognizers>
+                            <ffimageloading:CachedImage Aspect="AspectFit" WidthRequest="40" HeightRequest="40" Source="Touch_ID.png" />
+                        </StackLayout>
+                        <StackLayout HeightRequest="20" />
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="45,0,45,0">
+                                <controls:CustomEntry x:Name="usernameEntry" Text="{Binding Path=Username}" VerticalOptions="Center" HeightRequest="40" HorizontalTextAlignment="Center" BackgroundColor="Transparent" TextColor="Black" FontSize="12"
+                                    Placeholder="{controlstrns:Translate UsernameLabel}" />
+                            </StackLayout>    
+                            <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="45,5,45,0">
+                                <controls:CustomEntry x:Name="passwordEntry" Text="{Binding Path=Password}" VerticalOptions="Center" HeightRequest="40" IsPassword="True" HorizontalTextAlignment="Center" BackgroundColor="Transparent" TextColor="Black" FontSize="12"
+                                    Placeholder="{controlstrns:Translate PasswordLabel}" />
+                            </StackLayout>    
+                            <StackLayout HeightRequest="30" />
+                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="-25" Orientation="Horizontal" BackgroundColor="{controlstrns:Translate HeaderButtonColor}" Margin="45,0,45,0">
+                                <Button x:Name="LoginBtn" HorizontalOptions="CenterAndExpand" Text="{controlstrns:Translate LoginButton}" FontSize="18" BorderWidth="0" BorderRadius="0" IsEnabled="{Binding IsNotBusy}" BackgroundColor="Transparent" TextColor="White" Command="{Binding LoginCommand}" />
+                                <AbsoluteLayout HorizontalOptions="End" WidthRequest="15" Padding="0,0,10,0" VerticalOptions="Center" HeightRequest="15">
+                                    <ActivityIndicator WidthRequest="15" HeightRequest="15" Color="White" HorizontalOptions="Center"  IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+                                </AbsoluteLayout>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LoginCommand}" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>    
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Row="3" HeightRequest="20" />
+                </Grid>
+                <Label Text="Version 2.0" Margin="0,0,10,0" TextColor="Black" FontSize="12" HorizontalTextAlignment="End" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+        </ScrollView>    
+    </ContentPage.Content>
+</ContentPage>

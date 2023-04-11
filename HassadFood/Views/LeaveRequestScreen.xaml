@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:controls="clr-namespace:HassadFood;assembly=HassadFood" 
+             Title="{controlstrns:Translate LeaveRequest}"
+               xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="False"
+             xmlns:controlstrns="clr-namespace:HassadFood.Resx;assembly=HassadFood"
+             x:Class="HassadFood.Views.LeaveRequestScreen">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+        <StackLayout Grid.Row="0" >
+           <!--<StackLayout Padding="10,0,10,0" Orientation="Horizontal" HeightRequest="50" BackgroundColor="#d0d5d8">
+                <Label Text="Note" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" FontSize="14" />
+                <Image HeightRequest="20" WidthRequest="20" Source="ic_down_arrow.png" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding NoteCommand}" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>-->
+                 
+            <!--<Label IsVisible="{Binding Note}" Text="{controlstrns:Translate LeaveRequestNote}" TextColor="{controlstrns:Translate HeaderButtonColor}" FontSize="14" />
+            <Label Margin="10,0,0,0" Text="TIP: Annual Leaves are only eligible to get Leave Advance and Air Ticket." TextColor="{controlstrns:Translate HeaderButtonColor}" FontSize="14" />
+            <Label Margin="10,0,0,0" Text="TIP: Sick Leave / Escort Leave / Formal Representation Leave Approval is subject to submission of Original Document to HR." TextColor="{controlstrns:Translate HeaderButtonColor}" FontSize="14" />
+            <Label Margin="10,0,0,0" Text="TIP: Escort Leave maximum limit is 60 Days. More than 60 Days HR needs to be informed in Advance." TextColor="{controlstrns:Translate HeaderButtonColor}" FontSize="14" />
+            <Label Margin="10,0,10,0" Text="TIP: Exit Permit is valid only for 24 Hours (From: 00:01 AM to 23.59 PM of the mentioned travel date), in case of any change in the Travel date and time. Please apply for new Exit permits through Exit Permit Request in Oracle Self Service or contact HR." TextColor="{controlstrns:Translate HeaderButtonColor}" FontSize="14" />-->
+            <ScrollView Orientation="Vertical" Padding="10">
+                <StackLayout Orientation="Vertical">
+                    <!--<Label Text="{controlstrns:Translate LeaveStatus}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                    <Label Margin="0,5,0,0" Text="Confirmed" FontSize="16" />-->
+                    <Label Text="{controlstrns:Translate LeaveType}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                    <StackLayout Orientation="Horizontal">
+                        <Picker IsEnabled="{Binding IsNotListBusy}" Title="Select Leave" HorizontalOptions="FillAndExpand" ItemsSource="{Binding GetAbsenceTypeInformation.NewAbsenceType}" SelectedItem="{Binding SelectedItemAbsenceType}" />
+                        <ActivityIndicator WidthRequest="15" HeightRequest="15" Color="{controlstrns:Translate HeaderButtonColor}" IsRunning="{Binding IsListBusy}" IsVisible="{Binding IsListBusy}" />
+                    </StackLayout>    
+                    <!--<Label Margin="0,5,0,0" Text="{controlstrns:Translate LeaveCategory}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                    <Label Margin="0,5,0,0" Text="Paid Leave" FontSize="16" />-->
+                    <!--<Label Margin="0,5,0,0" Text="Absence Reason" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                    <Picker />-->
+                    <StackLayout Orientation="Horizontal">    
+                        <Label Margin="0,5,0,0" Text="{controlstrns:Translate StartDate}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                        <DatePicker IsEnabled="{Binding IsNotBusy}" Date="{Binding SelectedLeaveStartDateItem}" Format="dd-MMM-yyyy" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">    
+                        <Label Margin="0,5,0,0" Text="{controlstrns:Translate EndDate}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                        <DatePicker IsEnabled="{Binding IsNotBusy}" Date="{Binding SelectedLeaveEndDateItem}" Format="dd-MMM-yyyy" />
+                    </StackLayout>        
+                    <!--<Label Margin="0,5,0,0" Text="{controlstrns:Translate StartTime}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                    <Picker ItemsSource="{Binding ItemsHours}" SelectedItem="{Binding SelectedHoursItem}" />
+                    <Label Margin="0,5,0,0" Text="{controlstrns:Translate EndTime}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                    <Picker ItemsSource="{Binding ItemsMinutes}" SelectedItem="{Binding SelectedMinutesItem}" />-->
+                    <StackLayout Margin="0,5,0,0" Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{controlstrns:Translate TotalDays}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                            <Label Text="{Binding CalculatedLeaveDuration}" TextColor="Black" FontSize="16" />
+                        </StackLayout>
+                        <!--<StackLayout WidthRequest="20" />
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{controlstrns:Translate TotalHours}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                            <Label Text="0" FontSize="16" />
+                        </StackLayout>-->
+                    </StackLayout>    
+                    <!--<StackLayout Margin="0,5,0,0" Orientation="Horizontal" HorizontalOptions="Start" Padding="5,0,5,0" BackgroundColor="{controlstrns:Translate HeaderButtonColor}" >
+                        <Button Text="{controlstrns:Translate CalculateDuration}" FontSize="16" BorderWidth="0" BorderRadius="0" IsEnabled="{Binding IsNotBusy}" BackgroundColor="Transparent" TextColor="White" Command="{Binding CalculateDurationCommand}" />
+                        <ActivityIndicator WidthRequest="15" HeightRequest="15" Color="White" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding CalculateDurationCommand}" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>-->
+                    <!--<Label Margin="0,5,0,0" Text="{controlstrns:Translate ReplacedBy}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                    <StackLayout Orientation="Horizontal">
+                        <Label Margin="0,5,0,0" Text="{Binding ReassignUser}" FontSize="16" HorizontalOptions="FillAndExpand" />
+                        <Image HeightRequest="20" WidthRequest="20" Source="ic_search.png" Margin="0,0,10,0" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding SearchCommand}" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>-->  
+                    <StackLayout Orientation="Horizontal">            
+                        <Label Margin="0,5,0,0" Text="{controlstrns:Translate LeaveAdvance}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                        <Picker ItemsSource="{Binding YesNoItem}" WidthRequest="60" SelectedItem="{Binding SelectedLeaveAdvance}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">                                
+                        <Label Margin="0,5,0,0" Text="{controlstrns:Translate AirTicket}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                        <Picker ItemsSource="{Binding YesNoItem}" WidthRequest="60" SelectedItem="{Binding SelectedAirTicket}"  />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">                                
+                        <Label Margin="0,5,0,0" Text="{controlstrns:Translate ExitPermitLbl}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                        <Picker ItemsSource="{Binding YesNoItem}" WidthRequest="60" SelectedItem="{Binding SelectedExitPermit}"  />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">                                
+                        <Label Margin="0,5,0,0" Text="{controlstrns:Translate FlightDate}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                        <controls:NullableDatePicker NullableDate="{Binding FlightDate}" Format="dd-MMM-yyyy" WidthRequest="150" />
+                    </StackLayout>
+                    <Label Margin="0,5,0,0" Text="{controlstrns:Translate AirlineFlightNumber}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                    <controls:CustomEntry FontSize="16" Text="{Binding Path=AirlineFlightNumber}" />
+                    <Label Margin="0,5,0,0" Text="{controlstrns:Translate FlightTravelTime}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                    <controls:CustomEntry FontSize="16" Text="{Binding Path=FlightTravelTime}" />
+                    <Label Margin="0,5,0,0" Text="{controlstrns:Translate Comments}" TextColor="#229ed8" VerticalTextAlignment="Center" FontSize="14" />
+                    <controls:CustomEntry Text="{Binding Path=Comments}" FontSize="16" />
+                    <StackLayout Padding="0,0,0,0" Orientation="Horizontal">
+                        <Image Margin="0,5,0,0" HeightRequest="25" WidthRequest="25" Source="{Binding AddAttachmentsImage}" />
+                        <StackLayout WidthRequest="3" />
+                        <Label Margin="0,5,0,0" VerticalTextAlignment="Center" Text="Add Attachments" TextColor="#229ed8" FontSize="14" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding AddAttachmentsCommand}" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout IsVisible="{Binding AddAttachments}">
+                        <StackLayout Orientation="Horizontal" Padding="40,5,0,0" >
+                            <StackLayout Padding="0,0,0,0" Orientation="Horizontal">
+                                <Image Margin="0,5,0,0" HeightRequest="25" WidthRequest="25" Source="ic_camera.png" />
+                                <StackLayout WidthRequest="3" />
+                                <Label Margin="0,5,0,0" VerticalTextAlignment="Center" Text="Camera" TextColor="#229ed8" FontSize="14" />
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding CameraCommand}" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                            <StackLayout WidthRequest="20" />
+                            <StackLayout Padding="0,0,0,0" Orientation="Horizontal">
+                                <Image Margin="0,5,0,0" HeightRequest="25" WidthRequest="25" Source="ic_gallery.png" />
+                                <StackLayout WidthRequest="3" />
+                                <Label Margin="0,5,0,0" VerticalTextAlignment="Center" Text="Gallery" TextColor="#229ed8" FontSize="14" />
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding GalleryCommand}" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout IsVisible="{Binding Attachments1Visible}" Padding="40,0,0,0" Orientation="Horizontal">
+                            <Label Margin="0,5,0,0" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" Text="{Binding Attachments1}" TextColor="#229ed8" FontSize="14" />
+                            <Image Margin="0,5,10,0" HeightRequest="25" WidthRequest="25" Source="ic_delete_forever.png" >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Delete1Command}" />
+                                </Image.GestureRecognizers>
+                            </Image>    
+                        </StackLayout>
+                        <StackLayout IsVisible="{Binding Attachments2Visible}" Padding="40,0,0,0" Orientation="Horizontal">
+                            <Label Margin="0,5,0,0" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" Text="{Binding Attachments2}" TextColor="#229ed8" FontSize="14" />
+                            <Image Margin="0,5,10,0" HeightRequest="25" WidthRequest="25" Source="ic_delete_forever.png" >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Delete2Command}" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+                        <StackLayout IsVisible="{Binding Attachments3Visible}" Padding="40,0,0,0" Orientation="Horizontal">
+                            <Label Margin="0,5,0,0" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" Text="{Binding Attachments3}" TextColor="#229ed8" FontSize="14" />
+                            <Image Margin="0,5,10,0" HeightRequest="25" WidthRequest="25" Source="ic_delete_forever.png" >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Delete3Command}" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="{controlstrns:Translate HeaderButtonColor}" Margin="5">
+                <Button Text="{controlstrns:Translate Submit}" HorizontalOptions="CenterAndExpand" FontSize="18" BorderWidth="0" BorderRadius="0" IsEnabled="{Binding IsNotBusy}" BackgroundColor="Transparent" TextColor="White" Command="{Binding SubmitCommand}" />
+                <ActivityIndicator WidthRequest="15" HeightRequest="15" Color="White" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" Margin="0,0,5,0" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding SubmitCommand}" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout> 
+        </StackLayout>
+            <!--<StackLayout Grid.Row="0" IsVisible="{Binding SearchView}" Orientation="Vertical" BackgroundColor="#66000000" >
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding SearchCommand}" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <StackLayout Spacing="0" Margin="20,50,20,50" Grid.Row="0" IsVisible="{Binding SearchView}" Orientation="Vertical" BackgroundColor="White" >
+                <StackLayout Orientation="Horizontal" BackgroundColor="White" HeightRequest="40" >
+                    <controls:CustomEntry x:Name="SearchText" Text="{Binding SearchText}" HorizontalOptions="FillAndExpand" FontSize="16" Placeholder="Enter the name"  />
+                    <Image HeightRequest="20" WidthRequest="20" Source="ic_search.png" Margin="0,0,10,0" />
+                    <ActivityIndicator WidthRequest="15" HeightRequest="15" WidthRequest="15" HeightRequest="15" Color="{controlstrns:Translate HeaderButtonColor}" IsRunning="{Binding IsListBusy}" IsVisible="{Binding IsListBusy}" />
+                </StackLayout>
+                <StackLayout HeightRequest="0.5" BackgroundColor="Black" HorizontalOptions="FillAndExpand" />
+                <ListView
+                    x:Name="ReassignList"
+                    SelectedItem="{Binding SelectedReassignItem, Mode=TwoWay}"
+                    ItemsSource="{Binding ReassignUserInformation.get_reassign_users}"
+                    SeparatorVisibility="Default"       
+                    IsGroupingEnabled="false"
+                    BackgroundColor="White"
+                    HasUnevenRows="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10" Spacing="4" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                                        <Label Text="Username : " TextColor="Black" FontSize="14" HorizontalTextAlignment="Start" VerticalOptions="Center" LineBreakMode="WordWrap"  />
+                                        <Label Text="{Binding user_name}" TextColor="Black" FontSize="14" HorizontalTextAlignment="Start" VerticalOptions="Center" LineBreakMode="WordWrap"  />
+                                    </StackLayout> 
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                                        <Label Text="Display Name : " TextColor="Black" FontSize="14" HorizontalTextAlignment="Start" VerticalOptions="Center" LineBreakMode="WordWrap"  />
+                                        <Label Text="{Binding display_name}" TextColor="Black" FontSize="14" HorizontalTextAlignment="Start" VerticalOptions="Center" LineBreakMode="WordWrap"  />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                                        <Label Text="Email Address : " TextColor="Black" FontSize="14" HorizontalTextAlignment="Start" VerticalOptions="Center" LineBreakMode="WordWrap"  />
+                                        <Label Text="{Binding email_address}" TextColor="Black" FontSize="14" HorizontalTextAlignment="Start" VerticalOptions="Center" LineBreakMode="WordWrap"  />
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                        <Label />
+                    </ListView.Footer>
+                </ListView>
+            </StackLayout>-->
+        </Grid>    
+    </ContentPage.Content>
+</ContentPage>

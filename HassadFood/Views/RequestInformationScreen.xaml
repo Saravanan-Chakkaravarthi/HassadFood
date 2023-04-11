@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:HassadFood"
+             x:Class="HassadFood.Views.RequestInformationScreen">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <ScrollView Orientation="Vertical" Grid.Row="0" VerticalOptions="FillAndExpand" Margin="0,10,0,0" Padding="10,0,10,0">
+                <StackLayout Orientation="Vertical">
+
+
+
+                    <Label Margin="0,5,0,0" Text="Worklist Participants *"  Style="{StaticResource FieldHeadStyle}"  />
+                    <Frame Padding="5,0,10,0" BorderColor="{StaticResource EditorBorderColor}" HeightRequest="40" HasShadow="false" CornerRadius="5" >
+                        <StackLayout Orientation="Horizontal">
+                            <Label Margin="0,5,0,0" Text="{Binding ReassignUser}" HorizontalOptions="FillAndExpand"  Style="{StaticResource FieldStyle}"  />
+                            <Image HeightRequest="20" WidthRequest="20" Source="ic_search.png" Margin="0,0,10,0" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding SearchCommand}" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </Frame>
+                    <Label Margin="0,5,0,0" Text="Comments"  Style="{StaticResource FieldHeadStyle}"  />
+                    <Frame Padding="5,0,10,0" BorderColor="{StaticResource EditorBorderColor}" HeightRequest="60" HasShadow="false" CornerRadius="5" >
+                        <Editor  Text="{Binding Path=Comments}"  Style="{StaticResource FieldStyle}" />
+                    </Frame>
+
+                    <StackLayout Padding="0,0,0,0" Orientation="Horizontal">
+                        <Image Margin="0,5,0,0" HeightRequest="25" WidthRequest="25" Source="{Binding AddAttachmentsImage}" />
+                        <StackLayout WidthRequest="3" />
+                        <Label Margin="0,5,0,0" VerticalTextAlignment="Center" Text="Attachments"  Style="{StaticResource FieldHeadStyle}"  />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding AddAttachmentsCommand}" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+
+
+
+                    <StackLayout IsVisible="{Binding AddAttachments}">
+                        <StackLayout Orientation="Horizontal" Padding="40,5,0,0" >
+                            <StackLayout Padding="0,0,0,0" Orientation="Horizontal">
+                                <Image Margin="0,5,0,0" HeightRequest="25" WidthRequest="25" Source="ic_camera.png" />
+                                <StackLayout WidthRequest="3" />
+                                <Label Margin="0,5,0,0" VerticalTextAlignment="Center" Text="Camera"  Style="{StaticResource FieldHeadStyle}"  />
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding CameraCommand}" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                            <StackLayout WidthRequest="20" />
+                            <StackLayout Padding="0,0,0,0" Orientation="Horizontal">
+                                <Image Margin="0,5,0,0" HeightRequest="25" WidthRequest="25" Source="ic_gallery.png" />
+                                <StackLayout WidthRequest="3" />
+                                <Label Margin="0,5,0,0" VerticalTextAlignment="Center" Text="Gallery"  Style="{StaticResource FieldHeadStyle}"  />
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding GalleryCommand}" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout IsVisible="{Binding Attachments1Visible}" Padding="40,0,0,0" Orientation="Horizontal">
+                            <Label Margin="0,5,0,0" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" Text="{Binding Attachments1}"  Style="{StaticResource FieldHeadStyle}"  />
+                            <Image Margin="0,5,10,0" HeightRequest="25" WidthRequest="25" Source="ic_delete_forever.png" >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Delete1Command}" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+                        <StackLayout IsVisible="{Binding Attachments2Visible}" Padding="40,0,0,0" Orientation="Horizontal">
+                            <Label Margin="0,5,0,0" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" Text="{Binding Attachments2}"  Style="{StaticResource FieldHeadStyle}"  />
+                            <Image Margin="0,5,10,0" HeightRequest="25" WidthRequest="25" Source="ic_delete_forever.png" >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Delete2Command}" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+                        <StackLayout IsVisible="{Binding Attachments3Visible}" Padding="40,0,0,0" Orientation="Horizontal">
+                            <Label Margin="0,5,0,0" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" Text="{Binding Attachments3}"  Style="{StaticResource FieldHeadStyle}"  />
+                            <Image Margin="0,5,10,0" HeightRequest="25" WidthRequest="25" Source="ic_delete_forever.png" >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Delete3Command}" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center" WidthRequest="150" BackgroundColor="#9c8104" Margin="5,20,5,5">
+                        <Button Text="SUBMIT" Style="{StaticResource FieldHeadStyle}" HorizontalOptions="CenterAndExpand" FontSize="18" BorderWidth="0" BorderRadius="0" IsEnabled="{Binding IsNotBusy}" BackgroundColor="Transparent" TextColor="White" Command="{Binding SubmitCommand}" />
+                        <ActivityIndicator WidthRequest="15" HeightRequest="15" Color="White" IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" Margin="0,0,5,0" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding SubmitCommand}" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>-->
+
+                    <Frame Padding="0" WidthRequest="150" CornerRadius="10" HorizontalOptions="Center" HeightRequest="40">
+                        <StackLayout HeightRequest="40"  Orientation="Horizontal" HorizontalOptions="Center" WidthRequest="150"  Margin="-5">
+                            <Button Text="SUBMIT" FontFamily="{StaticResource NunitoMedium}" HorizontalOptions="CenterAndExpand" FontSize="18" BorderWidth="0" BorderRadius="0" IsEnabled="{Binding IsNotBusy}" BackgroundColor="Transparent" TextColor="White" Command="{Binding SubmitCommand}" />
+                            <ActivityIndicator WidthRequest="15" HeightRequest="15" Color="White" IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" Margin="0,0,5,0" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding SubmitCommand}" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </Frame>
+
+                    <StackLayout x:Name="StackFooterIndicator" VerticalOptions="EndAndExpand" Padding="0" Margin="-10,0,-10,0" Spacing="-10" >
+                        <Image HorizontalOptions="EndAndExpand" x:Name="ImgFooterIndicator" Source="ic_circular_up_arrow.png" ></Image>
+                        <Image Source="footer_bg"  HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+
+
+                </StackLayout>
+            </ScrollView>
+
+           
+
+
+            <StackLayout Grid.Row="0" IsVisible="{Binding SearchView}" Orientation="Vertical" BackgroundColor="#66000000" >
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding SearchCommand}" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <StackLayout Spacing="0" Margin="20,50,20,50" Grid.Row="0" IsVisible="{Binding SearchView}" Orientation="Vertical" BackgroundColor="White" >
+                <StackLayout Orientation="Horizontal" BackgroundColor="White" HeightRequest="40" >
+                    <controls:CustomEntry x:Name="SearchText" Text="{Binding SearchText}" HorizontalOptions="FillAndExpand"  Placeholder="Enter the name" Style="{StaticResource FieldHeadStyle}" />
+                    <Image HeightRequest="20" WidthRequest="20" Source="ic_search.png" Margin="0,0,10,0" />
+                    <ActivityIndicator WidthRequest="15" HeightRequest="15" Color="#5f6f50" IsRunning="{Binding IsListBusy}" IsVisible="{Binding IsListBusy}" />
+                </StackLayout>
+                <StackLayout HeightRequest="0.5" BackgroundColor="Black" HorizontalOptions="FillAndExpand" />
+                <ListView
+                    x:Name="ReassignList"
+                    SelectedItem="{Binding SelectedReassignItem, Mode=TwoWay}"
+                    ItemsSource="{Binding ReassignUserInformation.p_return}"
+                    SeparatorVisibility="Default"       
+                    IsGroupingEnabled="false"
+                    BackgroundColor="White"
+                    HasUnevenRows="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10" Spacing="4" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                                        <Label Text="Username : "  FontSize="14" HorizontalTextAlignment="Start" VerticalOptions="Center" LineBreakMode="WordWrap" Style="{StaticResource FieldHeadStyle}" />
+                                        <Label Text="{Binding user_name}"  FontSize="14" HorizontalTextAlignment="Center" VerticalOptions="Center" LineBreakMode="WordWrap" Style="{StaticResource FieldStyle}" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                                        <Label Text="Display Name : "  FontSize="14" HorizontalTextAlignment="Start" VerticalOptions="Center" LineBreakMode="WordWrap" Style="{StaticResource FieldHeadStyle}" />
+                                        <Label Text="{Binding display_name}"  FontSize="14" HorizontalTextAlignment="Center" VerticalOptions="Center" LineBreakMode="WordWrap" Style="{StaticResource FieldStyle}" />
+                                    </StackLayout>
+                                    <!--<StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                                        <Label Text="Email Address : "  FontSize="14" HorizontalTextAlignment="Start" VerticalOptions="Center" LineBreakMode="WordWrap" Style="{StaticResource FieldHeadStyle}" />
+                                        <Label Text="{Binding email_address}"  FontSize="14" HorizontalTextAlignment="Center" VerticalOptions="Center" LineBreakMode="WordWrap" Style="{StaticResource FieldStyle}" />
+                                    </StackLayout>-->
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                        <Label />
+                    </ListView.Footer>
+                </ListView>
+            </StackLayout>
+            <!--<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="{controlstrns:Translate HeaderButtonColor}" Margin="5">
+                <Button Text="S U B M I T" HorizontalOptions="CenterAndExpand" FontSize="18" BorderWidth="0" BorderRadius="0" IsEnabled="{Binding IsNotBusy}" BackgroundColor="Transparent" TextColor="White" Command="{Binding SubmitCommand}" />
+                <ActivityIndicator WidthRequest="15" HeightRequest="15" Color="White" IsVisible="false" Margin="0,0,5,0" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding SubmitCommand}" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>-->
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

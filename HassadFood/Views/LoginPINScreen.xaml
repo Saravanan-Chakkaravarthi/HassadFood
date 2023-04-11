@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:HassadFood;assembly=HassadFood" 
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             xmlns:local="clr-namespace:HassadFood;assembly=HassadFood"
+             xmlns:controlstrns="clr-namespace:HassadFood.Resx;assembly=HassadFood" 
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+             x:Class="HassadFood.Views.LoginPINScreen">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" Android="0" WinPhone="0" />
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <ContentView SizeChanged="OnContentViewSizeChanged">
+                <Grid Padding="10,50,10,10" BackgroundColor="Transparent">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Image x:Name="imglogo" Grid.Row="0" Aspect="AspectFit" WidthRequest="150" HeightRequest="90" VerticalOptions="Center" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource" iOS="logo.png" Android="logo.png" />
+                        </Image.Source>
+                    </Image>
+                    <StackLayout Grid.Row="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Orientation="Vertical" Spacing="15">
+                        <Label FontSize="14" BackgroundColor="Transparent" Text="Your OTP is generated. Please check with your IT Administrator." TextColor="Black" HorizontalTextAlignment="Center" />
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                            <controls:CustomEntry x:Name="txtPIN" HeightRequest="40" ReturnType="Done" FontSize="16" HorizontalOptions="Center" HorizontalTextAlignment="Center" WidthRequest="200" Text="{Binding Path=PIN}" TextChanged="LimitEntry"
+                                IsEnabled="{Binding IsNotBusy}" Placeholder="Enter your PIN" />
+                        </StackLayout>
+                        <StackLayout x:Name="buttonView" Padding="5" HorizontalOptions="FillAndExpand" Orientation="Vertical" >
+                            <Button x:Name="VerifyBtn" Text="Verify" WidthRequest="110" HorizontalOptions="CenterAndExpand" BorderWidth="0" BorderRadius="0" IsEnabled="{Binding IsNotBusy}" BackgroundColor="{controlstrns:Translate HeaderButtonColor}" TextColor="White" Command="{Binding VerifyCommand}"/>
+                            <AbsoluteLayout HorizontalOptions="Center" WidthRequest="15" Padding="0,0,10,0" VerticalOptions="Center" HeightRequest="15" IsVisible="{Binding IsBusy}">
+                                <ActivityIndicator Color="Black" HorizontalOptions="Center" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+                            </AbsoluteLayout>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                            <StackLayout x:Name="ResendPINBtn" HorizontalOptions="FillAndExpand" IsEnabled="{Binding IsNotBusy}" Orientation="Vertical" Spacing="2" > 
+                                <Label FontSize="12" BackgroundColor="Transparent" Text="Resend PIN" TextColor="{controlstrns:Translate HeaderButtonColor}" /> 
+                                <StackLayout Orientation="Vertical" HeightRequest="1" BackgroundColor="{controlstrns:Translate HeaderButtonColor}" Spacing="2" />    
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ResendPINCommand}" NumberOfTapsRequired="1" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </StackLayout>    
+                    </StackLayout>
+                </Grid>
+            </ContentView>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

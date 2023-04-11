@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    Title=" "
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+    ios:Page.UseSafeArea="true"
+    xmlns:controlstrns="clr-namespace:HassadFood.Resx;assembly=HassadFood"          
+    x:Class="HassadFood.Views.MainPage">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" Android="0,0,0,0" WinPhone="0,0,0,0"/>
+    </ContentPage.Padding>
+	<ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" >
+               
+                <Image x:Name="side_menu" Margin="5,10,0,0" Aspect="AspectFit" VerticalOptions="Center" Source="ic_action_side_menu.png" HeightRequest="40" WidthRequest="40" HorizontalOptions="StartAndExpand" />
+                <Image x:Name="logout_menu"  Margin="0,0,10,0" Aspect="AspectFit" VerticalOptions="Center" Source="power-off.png" HeightRequest="25" WidthRequest="25" HorizontalOptions="End" >
+                    <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LogoutCommand}"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>  
+                </Image>
+                
+            </StackLayout>
+
+            <Image Margin="0,0,0,0" Aspect="AspectFit" HorizontalOptions="FillAndExpand" WidthRequest="150"  HeightRequest="90" Source="logo.png" />    
+            <Label Text="{controlstrns:Translate Welcome}" Margin="15,0,0,0" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" TextColor="#0C335A" />
+            <Label Text="Your Annual Leave Balance" Margin="0,15,0,0" FontAttributes="Bold" FontSize="14" HorizontalTextAlignment="Center" TextColor="#4D4D4D" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Margin="0,5,0,0" Text="{Binding LeaveBalance}" TextColor="Black" IsEnabled="{Binding IsNotListBusy}" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="22" />
+                <ActivityIndicator WidthRequest="15" HeightRequest="15" Color="{controlstrns:Translate HeaderButtonColor}" IsRunning="{Binding IsListBusy}" IsVisible="{Binding IsListBusy}" />
+            </StackLayout>
+            
+                <StackLayout BackgroundColor="#0C335A"   HorizontalOptions="Fill" Orientation="Horizontal" Spacing="10" Margin="10,10,10,0" Padding="5" >
+                <Label Text="Notifications"  FontSize="16" VerticalTextAlignment="Center" TextColor="White"  HorizontalOptions="StartAndExpand" >
+                </Label>
+                
+                <Label x:Name="viewlbl" Text="View More" FontSize="12" VerticalTextAlignment="Center" TextColor="White" HorizontalOptions="End">
+                <Label.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1"  Command="{Binding RefreshCommand}" Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                 
+            </StackLayout>
+
+            
+            <Label x:Name="notify_lbl" Margin="10,10,0,0"  Text="No new notifications." IsVisible="{Binding EmptyList}" TextColor="Black" LineBreakMode="NoWrap" FontSize="14" />
+           
+             
+            <ListView
+                    x:Name="NotificationList"
+                    IsVisible="False"
+                    SelectedItem="{Binding SelectedItemWorkList, Mode=TwoWay}"
+                    ItemsSource="{Binding WorkListInformation.get_work_list}"
+                    SeparatorVisibility="None"      
+                    IsPullToRefreshEnabled="true"
+                    RefreshCommand="{Binding RefreshCommand}" 
+                    IsRefreshing="{Binding IsListBusy, Mode=OneWay}"
+                    IsGroupingEnabled="false"
+                    HasUnevenRows="true" HeightRequest="200" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <StackLayout Padding="0" Orientation="Horizontal">
+                                        <ffimageloading:CachedImage HorizontalOptions="Start" VerticalOptions="Center" Margin="20,10,10,10" Aspect="AspectFit" HeightRequest="40" WidthRequest="40" Source="{Binding image_Name}" />
+                                        <StackLayout Spacing="5" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="0">
+                                            <StackLayout Spacing="3" Padding="10" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Orientation="Vertical" >
+<!--                                                <Label Text="{Binding sit_name}" TextColor="Black" LineBreakMode="NoWrap" FontSize="14" />-->
+                                                <Label Text="{Binding subject}"  TextColor="Black" LineBreakMode="WordWrap" FontSize="14" />
+                                                <Label Text="{Binding begin_date, StringFormat='{0:dd-MMM-yyyy}'}" VerticalOptions="Center" TextColor="Gray" LineBreakMode="NoWrap" FontSize="14" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout Padding="10,0,10,0">
+                                        <BoxView HeightRequest="0.5" HorizontalOptions="FillAndExpand" BackgroundColor="Gray"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+            </ListView>
+             <StackLayout x:Name="viewbtn" Margin="5" Padding="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    
+                   
+                  
+             <Button Image="ic_action_leave_W.png" ContentLayout="top,30" Text="Leaves"  Grid.Column="0" Grid.Row="0" Clicked="Button_Clicked"  BorderColor="#0C335A"  BackgroundColor="#0C335A" VerticalOptions="Center" FontAttributes="Bold" FontSize="Large" BorderWidth="0" WidthRequest="60" HeightRequest="95" Margin="10" BorderRadius="5" TextColor="White"   />
+             <Button Image="ic_educationallowance_W.png" ContentLayout="top,30" Text="Allowances" Grid.Column="1" Grid.Row="0" Clicked="Btn_Clicked"  BorderColor="#0C335A"  BackgroundColor="#0C335A" VerticalOptions="Center" FontAttributes="Bold" FontSize="Large" BorderWidth="0" WidthRequest="60" HeightRequest="95" Margin="10"  BorderRadius="5"  TextColor="White"  />
+             <Button Image="ic_request_status_W.png"  ContentLayout="top,30" Text="Request" Grid.Column="0" Grid.Row="1" Clicked="Btn_Click"  BorderColor="#0C335A"  BackgroundColor="#0C335A" VerticalOptions="Center" FontAttributes="Bold" FontSize="Large" BorderWidth="0" WidthRequest="60" HeightRequest="95" Margin="10"  BorderRadius="5"  TextColor="White"  />
+             <Button Image="ic_duty_visit_W.png"  ContentLayout="top,30" Text="Duty Visit" Grid.Column="1" Grid.Row="1" Clicked="Button_Click"  BorderColor="#0C335A"  BackgroundColor="#0C335A" VerticalOptions="Center" FontAttributes="Bold" FontSize="Large" BorderWidth="0" WidthRequest="60" HeightRequest="95" Margin="10"  BorderRadius="5"  TextColor="White"  />
+
+                </Grid>
+                
+                
+
+             </StackLayout>
+            <!--<ScrollView>
+                <Grid Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                </Grid>
+            </ScrollView>-->
+        </StackLayout>   
+	</ContentPage.Content>
+</ContentPage>

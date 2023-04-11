@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             Title="Notifications"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             x:Class="HassadFood.Views.WorkListScreen">
+    <ContentPage.Content>
+         <StackLayout Orientation="Vertical" Padding="10" Spacing="5">
+<!--            <Picker />-->
+            <ListView
+                    x:Name="NotificationList"
+                    SelectedItem="{Binding SelectedItemWorkList, Mode=TwoWay}"
+                    ItemsSource="{Binding WorkListInformation.get_worklist_user}"
+                    SeparatorVisibility="None"   
+                    IsPullToRefreshEnabled="true"
+                    RefreshCommand="{Binding RefreshCommand}" 
+                    IsRefreshing="{Binding IsListBusy, Mode=OneWay}"
+                    IsGroupingEnabled="false"
+                    HasUnevenRows="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="5,5,5,0" Spacing="5">
+                                <StackLayout Spacing="5" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Fill" Padding="0">
+                                    <StackLayout Spacing="3" Padding="10" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Orientation="Vertical" >
+                                        <Label Text="{Binding sit_name}" TextColor="Black" LineBreakMode="NoWrap" FontSize="14" />
+                                        <Label Text="{Binding subject}"  TextColor="#229ed8" LineBreakMode="WordWrap" FontSize="14" />
+                                        <Label Text="{Binding date_of_submission, StringFormat='{0:dd-MMM-yyyy}'}" VerticalOptions="Center" TextColor="#229ed8" LineBreakMode="NoWrap" FontSize="14" />
+                                    </StackLayout>
+                                    <StackLayout Padding="10,0,10,0">
+                                        <BoxView HeightRequest="0.5" HorizontalOptions="FillAndExpand" BackgroundColor="#229ed8"/>
+                                    </StackLayout>
+                                </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

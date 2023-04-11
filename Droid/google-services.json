@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "831197780123",
+    "firebase_url": "https://hassadhrms.firebaseio.com",
+    "project_id": "hassadhrms",
+    "storage_bucket": "hassadhrms.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831197780123:android:36aee177e02140de",
+        "android_client_info": {
+          "package_name": "com.hassad.mapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "831197780123-673id8j4kreqs3r1mm1f3jk4pvpvchi0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBZ0g1Z2AWxtveoS6PYIJhZkAVHTSKeKg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

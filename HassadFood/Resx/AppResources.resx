@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="UsernameLabel" xml:space="preserve">
+    <value>USERNAME</value>
+  </data>
+  <data name="PasswordLabel" xml:space="preserve">
+    <value>PASSWORD</value>
+  </data>
+  <data name="LoginButton" xml:space="preserve">
+    <value>L O G I N</value>
+  </data>
+  <data name="AlertText" xml:space="preserve">
+    <value>Alert</value>
+  </data>
+  <data name="OkText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="UsernameErrorMessage" xml:space="preserve">
+    <value>Username cannot be empty.</value>
+  </data>
+  <data name="PasswordErrorMessage" xml:space="preserve">
+    <value>Password cannot be empty.</value>
+  </data>
+  <data name="HeaderButtonColor" xml:space="preserve">
+    <value>#0C335A</value>
+  </data>
+  <data name="Leave" xml:space="preserve">
+    <value>Apply Leave</value>
+  </data>
+  <data name="DutyVisit" xml:space="preserve">
+    <value>Duty Visit</value>
+  </data>
+  <data name="ExitPermit" xml:space="preserve">
+    <value>Exit Permit</value>
+  </data>
+  <data name="WorkList" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Hassad Employee Self Service</value>
+  </data>
+  <data name="PerdiemAmount" xml:space="preserve">
+    <value>Perdiem Amount:</value>
+  </data>
+  <data name="ClassofTravel" xml:space="preserve">
+    <value>Class of Travel:</value>
+  </data>
+  <data name="DateofTravel" xml:space="preserve">
+    <value>Date of Travel: *</value>
+  </data>
+  <data name="FirstDayoftheDutyVisit" xml:space="preserve">
+    <value>First Day: *</value>
+  </data>
+  <data name="LastDayoftheDutyVisit" xml:space="preserve">
+    <value>Last Day: *</value>
+  </data>
+  <data name="ArrivalDate" xml:space="preserve">
+    <value>Arrival Date: *</value>
+  </data>
+  <data name="ExitPermitLbl" xml:space="preserve">
+    <value>Exit Permit: *</value>
+  </data>
+  <data name="DestinationRoute" xml:space="preserve">
+    <value>Destination / Route: *</value>
+  </data>
+  <data name="Budget" xml:space="preserve">
+    <value>Budget: *</value>
+  </data>
+  <data name="PurposeofVisitRemarks" xml:space="preserve">
+    <value>Purpose of Visit / Remarks: *</value>
+  </data>
+  <data name="Accomodation" xml:space="preserve">
+    <value>Accomodation: *</value>
+  </data>
+  <data name="Ticket" xml:space="preserve">
+    <value>Ticket: *</value>
+  </data>
+  <data name="PerdiemPaidbyHost" xml:space="preserve">
+    <value>Perdiem Paid by Host: *</value>
+  </data>
+  <data name="SubmissionDate" xml:space="preserve">
+    <value>Submission Date:</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>S U B M I T</value>
+  </data>
+  <data name="FlightDateRq" xml:space="preserve">
+    <value>Flight Date: *</value>
+  </data>
+  <data name="ReturnDate" xml:space="preserve">
+    <value>Return Date: *</value>
+  </data>
+  <data name="AirlineFlightNumber" xml:space="preserve">
+    <value>Airline Flight Number:</value>
+  </data>
+  <data name="FlightTravelTime" xml:space="preserve">
+    <value>Flight Travel Time:</value>
+  </data>
+  <data name="Justification" xml:space="preserve">
+    <value>Justification:</value>
+  </data>
+  <data name="AppliedLeaveDates" xml:space="preserve">
+    <value>Applied Leave Dates: *</value>
+  </data>
+  <data name="NewLeaveStartDate" xml:space="preserve">
+    <value>New Leave Start Date: *</value>
+  </data>
+  <data name="NewLeaveEndDate" xml:space="preserve">
+    <value>New Leave End Date: *</value>
+  </data>
+  <data name="NewTravelDate" xml:space="preserve">
+    <value>New Travel Date:</value>
+  </data>
+  <data name="JustificationRq" xml:space="preserve">
+    <value>Justification: *</value>
+  </data>
+  <data name="LeavetobeCancelled" xml:space="preserve">
+    <value>Leave to be Cancelled: *</value>
+  </data>
+  <data name="AdditionalComments" xml:space="preserve">
+    <value>Additional Comments:</value>
+  </data>
+  <data name="LeaveStatus" xml:space="preserve">
+    <value>Leave Status:</value>
+  </data>
+  <data name="LeaveType" xml:space="preserve">
+    <value>Leave Type: *</value>
+  </data>
+  <data name="LeaveCategory" xml:space="preserve">
+    <value>Leave Category:</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Start Date: *</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>End Date:</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>Start Time:</value>
+  </data>
+  <data name="EndTime" xml:space="preserve">
+    <value>End Time:</value>
+  </data>
+  <data name="TotalDays" xml:space="preserve">
+    <value>Total Days:</value>
+  </data>
+  <data name="TotalHours" xml:space="preserve">
+    <value>Total Hours:</value>
+  </data>
+  <data name="CalculateDuration" xml:space="preserve">
+    <value>Calculate Duration</value>
+  </data>
+  <data name="ReplacedBy" xml:space="preserve">
+    <value>Replaced By:</value>
+  </data>
+  <data name="MinChars" xml:space="preserve">
+    <value>(Min 3 Chars)</value>
+  </data>
+  <data name="LeaveAdvance" xml:space="preserve">
+    <value>Leave Advance:</value>
+  </data>
+  <data name="AirTicket" xml:space="preserve">
+    <value>Air Ticket:</value>
+  </data>
+  <data name="FlightDate" xml:space="preserve">
+    <value>Flight Date:</value>
+  </data>
+  <data name="RemarksRq" xml:space="preserve">
+    <value>Remarks: *</value>
+  </data>
+  <data name="ApprovedLeaveDatesRq" xml:space="preserve">
+    <value>Approved Leave Dates: *</value>
+  </data>
+  <data name="ResumptionDate" xml:space="preserve">
+    <value>Resumption Date:</value>
+  </data>
+  <data name="EmployeeRequest" xml:space="preserve">
+    <value>Duty Visit</value>
+  </data>
+  <data name="PermitRequest" xml:space="preserve">
+    <value>Permit Request</value>
+  </data>
+  <data name="AmendmentRequest" xml:space="preserve">
+    <value>Amendment Request</value>
+  </data>
+  <data name="CancellationRequest" xml:space="preserve">
+    <value>Cancellation Request</value>
+  </data>
+  <data name="LeaveRequest" xml:space="preserve">
+    <value>Leave Request</value>
+  </data>
+  <data name="ResumeRequest" xml:space="preserve">
+    <value>Resume Request</value>
+  </data>
+  <data name="LeaveRequestNote" xml:space="preserve">
+    <value>Note: Select Confirmed if you are sure of the dates of your absence, otherwise Select Planned. Select an Leave type, and enter any other information you want to record for your request.</value>
+  </data>
+  <data name="PermitRequestNote" xml:space="preserve">
+    <value>Note: Exit Permit is valid only for 24 Hours (From: 00:01 AM to 23.59 PM of the mentioned travel date), in case of any change in the Travel date and time. Please apply for new Exit permits through Exit Permit Request in Oracle Self Service or contact HR.</value>
+  </data>
+  <data name="EmployeeRequestNote" xml:space="preserve">
+    <value>Note: Upon completion of Duty Visit kindly handover the original Boarding Pass or Passport Stamp copy to HR for processing. This step is prerequisite for processing payment.</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments:</value>
+  </data>
+  <data name="LeaveAmendment" xml:space="preserve">
+    <value>Amendment</value>
+  </data>
+  <data name="LeaveCancel" xml:space="preserve">
+    <value>Cancellation</value>
+  </data>
+  <data name="LeaveResume" xml:space="preserve">
+    <value>Resumption</value>
+  </data>
+  <data name="LetterType" xml:space="preserve">
+    <value>Letter Type *</value>
+  </data>
+  <data name="LanguageOfLetter" xml:space="preserve">
+    <value>Language Of Letter *</value>
+  </data>
+  <data name="LetterPurpose" xml:space="preserve">
+    <value>Letter Purpose</value>
+  </data>
+  <data name="PurposeOfLetter" xml:space="preserve">
+    <value>Purpose Of Letter</value>
+  </data>
+  <data name="VisaType" xml:space="preserve">
+    <value>Visa Type</value>
+  </data>
+  <data name="TravelDestination" xml:space="preserve">
+    <value>Travel Destination</value>
+  </data>
+  <data name="TravelDateFrom" xml:space="preserve">
+    <value>Travel Date From</value>
+  </data>
+  <data name="TravelDateTo" xml:space="preserve">
+    <value>Travel Date To</value>
+  </data>
+</root>

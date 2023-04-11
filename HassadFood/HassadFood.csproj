@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard1.0\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard1.0\Xamarin.Forms.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B53DB596-42B8-4774-91C2-BB2208642514}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UseMSBuildEngine>true</UseMSBuildEngine>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HassadFood</RootNamespace>
+    <AssemblyName>HassadFood</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App.xaml" />
+    <EmbeddedResource Include="Views\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resx\AppResources.ar.resx">
+      <LastGenOutput>Resources.ar.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resx\AppResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MasterDetailScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SideMenuScreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ExitPermitRequestScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DutyVisitEmployeeRequestScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LeaveRequestScreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LeaveAmendmentRequestScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LeaveCancellationRequestScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LeaveResumeRequestScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WorkListDetailScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewAttachmentScreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LeaveSummaryScreen.xaml" />
+    <EmbeddedResource Include="Views\EmailVerificationScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginPINScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SalaryAdvanceRequest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CarLoanRequest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EducationAllowanceRequest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ApplicationAccessRequest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeLetterRequest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ClubMembershipFurnitureAllowanceRequest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AirTicketRequest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FutureLeaveSummaryScreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FutureLeaveBalanceScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainLeaveRequestScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainAllowancesScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainRequestScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resx\TranslateExtension.cs" />
+    <Compile Include="Interface\ILocalize.cs" />
+    <Compile Include="Resx\AppResources.Designer.cs">
+      <DependentUpon>AppResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ViewModels\ApprovalModel.cs" />
+    <Compile Include="ViewModels\ForwardNotificationRequestModel.cs" />
+    <Compile Include="ViewModels\LoginModel.cs" />
+    <Compile Include="ViewModels\PONotificationsDetailsModel.cs" />
+    <Compile Include="ViewModels\PurchaseNotificationsDetailsModel.cs" />
+    <Compile Include="ViewModels\RequestInformationModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Interface\ILoginManager.cs" />
+    <Compile Include="MVVMHelper\BaseViewModel.cs" />
+    <Compile Include="MVVMHelper\ExtendedBindableObject.cs" />
+    <Compile Include="MVVMHelper\ObservableObject.cs" />
+    <Compile Include="Controls\CustomEntry.cs" />
+    <Compile Include="Controls\CustomFrame.cs" />
+    <Compile Include="Controls\CustomLabel.cs" />
+    <Compile Include="Controls\ShadowEffect.cs" />
+    <Compile Include="Views\ApprovalScreen.xaml.cs">
+      <DependentUpon>ApprovalScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ForwardNotificationScreen.xaml.cs">
+      <DependentUpon>ForwardNotificationScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginPage.xaml.cs" />
+    <Compile Include="Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\MainModel.cs" />
+    <Compile Include="Views\MasterDetailScreen.xaml.cs">
+      <DependentUpon>MasterDetailScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PONotificationsDetailsScreen.xaml.cs">
+      <DependentUpon>PONotificationsDetailsScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseDistributionNotificationsDetailsScreen.xaml.cs">
+      <DependentUpon>PurchaseDistributionNotificationsDetailsScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseRequisitionNotificationsDetailsScreen.xaml.cs">
+      <DependentUpon>PurchaseRequisitionNotificationsDetailsScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RequestInformationScreen.xaml.cs">
+      <DependentUpon>RequestInformationScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SideMenuScreen.xaml.cs">
+      <DependentUpon>SideMenuScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\SideMenuModel.cs" />
+    <Compile Include="Resx\PlatformCulture.cs" />
+    <Compile Include="Views\ExitPermitRequestScreen.xaml.cs">
+      <DependentUpon>ExitPermitRequestScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DutyVisitEmployeeRequestScreen.xaml.cs">
+      <DependentUpon>DutyVisitEmployeeRequestScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LeaveRequestScreen.xaml.cs">
+      <DependentUpon>LeaveRequestScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LeaveAmendmentRequestScreen.xaml.cs">
+      <DependentUpon>LeaveAmendmentRequestScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LeaveCancellationRequestScreen.xaml.cs">
+      <DependentUpon>LeaveCancellationRequestScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LeaveResumeRequestScreen.xaml.cs">
+      <DependentUpon>LeaveResumeRequestScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\SavePDF.cs" />
+    <Compile Include="Interface\ITouchID.cs" />
+    <Compile Include="Interface\INotification.cs" />
+    <Compile Include="Interface\IDeviceAccess.cs" />
+    <Compile Include="WebService\APIClient.cs" />
+    <Compile Include="Interface\IUserDetails.cs" />
+    <Compile Include="WebService\Utils.cs" />
+    <Compile Include="WebService\Constants.cs" />
+    <Compile Include="WebService\DataInfo.cs" />
+    <Compile Include="Views\WorkListDetailScreen.xaml.cs">
+      <DependentUpon>WorkListDetailScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\WorkListDetailModel.cs" />
+    <Compile Include="Interface\IStore.cs" />
+    <Compile Include="ViewModels\LeaveRequestModel.cs" />
+    <Compile Include="ViewModels\DutyVisitEmployeeModel.cs" />
+    <Compile Include="ViewModels\ExitPermitRequestModel.cs" />
+    <Compile Include="Views\ViewAttachmentScreen.xaml.cs">
+      <DependentUpon>ViewAttachmentScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\LeaveAmendmentModel.cs" />
+    <Compile Include="ViewModels\LeaveCancellationModel.cs" />
+    <Compile Include="ViewModels\LeaveResumeModel.cs" />
+    <Compile Include="Views\LeaveSummaryScreen.xaml.cs" />
+    <Compile Include="ViewModels\LeaveSummaryModel.cs" />
+    <Compile Include="Controls\NullableDatePicker.cs" />
+    <Compile Include="Views\EmailVerificationScreen.xaml.cs">
+      <DependentUpon>EmailVerificationScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\EmailVerificationModel.cs" />
+    <Compile Include="Views\LoginPINScreen.xaml.cs">
+      <DependentUpon>LoginPINScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\LoginPINModel.cs" />
+    <Compile Include="Views\SalaryAdvanceRequest.xaml.cs">
+      <DependentUpon>SalaryAdvanceRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CarLoanRequest.xaml.cs">
+      <DependentUpon>CarLoanRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EducationAllowanceRequest.xaml.cs">
+      <DependentUpon>EducationAllowanceRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ApplicationAccessRequest.xaml.cs">
+      <DependentUpon>ApplicationAccessRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeLetterRequest.xaml.cs">
+      <DependentUpon>EmployeeLetterRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClubMembershipFurnitureAllowanceRequest.xaml.cs">
+      <DependentUpon>ClubMembershipFurnitureAllowanceRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\EmployeeLetterRequestModel.cs" />
+    <Compile Include="ViewModels\EducationAllowanceRequestModel.cs" />
+    <Compile Include="ViewModels\CarLoanRequestModel.cs" />
+    <Compile Include="ViewModels\SalaryAdvanceRequestModel.cs" />
+    <Compile Include="ViewModels\ClubMembershipFurnitureAllowanceRequestModel.cs" />
+    <Compile Include="ViewModels\ApplicationAccessRequestModel.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="Views\AirTicketRequest.xaml.cs">
+      <DependentUpon>AirTicketRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AirTicketRequestModel.cs" />
+    <Compile Include="ViewModels\FutureLeaveSummaryModel.cs" />
+    <Compile Include="Views\FutureLeaveSummaryScreen.xaml.cs">
+      <DependentUpon>FutureLeaveSummaryScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FutureLeaveBalanceScreen.xaml.cs">
+      <DependentUpon>FutureLeaveBalanceScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\FutureLeaveBalanceModel.cs" />
+    <Compile Include="Views\MainLeaveRequestScreen.xaml.cs">
+      <DependentUpon>MainLeaveRequestScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainAllowancesScreen.xaml.cs">
+      <DependentUpon>MainAllowancesScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainRequestScreen.xaml.cs">
+      <DependentUpon>MainRequestScreen.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PONotificationsDetailsScreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ModernHttpClient, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\modernhttpclient.2.4.2\lib\Portable-Net45+WinRT45+WP8+WPA81\ModernHttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.3.1.0.583944\lib\netstandard1.0\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.3.1.0.583944\lib\netstandard1.0\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.3.1.0.583944\lib\netstandard1.0\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.4.3.840\lib\portable-win+net45+wp80+win81+wpa81\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.4.3.840\lib\portable-win+net45+wp80+win81+wpa81\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.4.3.840\lib\portable-win+net45+wp80+win81+wpa81\FFImageLoading.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions">
+      <HintPath>..\packages\Plugin.Permissions.3.0.0.12\lib\netstandard1.0\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media">
+      <HintPath>..\packages\Xam.Plugin.Media.4.0.1.1\lib\netstandard1.0\Plugin.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp">
+      <HintPath>..\packages\SkiaSharp.1.60.0\lib\portable-net45+win8+wpa81+wp8\SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v7.1\Mono.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ApprovalScreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ForwardNotificationScreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PurchaseRequisitionNotificationsDetailsScreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PurchaseDistributionNotificationsDetailsScreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\RequestInformationScreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard1.0\Xamarin.Forms.targets')" />
+</Project>

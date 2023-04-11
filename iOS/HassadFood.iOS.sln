@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1704.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HassadFood.iOS", "HassadFood.iOS.csproj", "{BE3A06EF-10A6-49E7-9647-679F6310DCA6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE3A06EF-10A6-49E7-9647-679F6310DCA6}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{BE3A06EF-10A6-49E7-9647-679F6310DCA6}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{BE3A06EF-10A6-49E7-9647-679F6310DCA6}.Release|iPhone.ActiveCfg = Release|iPhone
+		{BE3A06EF-10A6-49E7-9647-679F6310DCA6}.Release|iPhone.Build.0 = Release|iPhone
+		{BE3A06EF-10A6-49E7-9647-679F6310DCA6}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{BE3A06EF-10A6-49E7-9647-679F6310DCA6}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{BE3A06EF-10A6-49E7-9647-679F6310DCA6}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{BE3A06EF-10A6-49E7-9647-679F6310DCA6}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6ACF7E63-1F05-4CA6-BCA5-7612A01A9A8F}
+	EndGlobalSection
+EndGlobal

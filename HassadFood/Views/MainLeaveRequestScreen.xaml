@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    Title="Leave Management"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+
+    x:Class="HassadFood.Views.MainLeaveRequestScreen" >
+    <ContentPage.Content>
+        <StackLayout  HorizontalOptions="Center" BackgroundColor="White" Margin="5">
+             <Button Text="Apply Leave" Image="ic_action_leave_W.png" Clicked="Button_Clicked" VerticalOptions="Center"  FontSize="Medium" BorderWidth="0" WidthRequest="200" HeightRequest="40" Margin="10" BorderRadius="5" BackgroundColor="#0C335A" TextColor="White" />
+            <Button Text="Amendement" Image="ic_amend_W.png" Clicked="Button_Clicked1" VerticalOptions="Center"  FontSize="Medium" BorderWidth="0" WidthRequest="200" HeightRequest="40" Margin="10" BorderRadius="5"  BackgroundColor="#0C335A" TextColor="White" />
+             <Button Text="Cancellation" Image="ic_cancel_W.png" Clicked="Button_Clicked2" VerticalOptions="Center"  FontSize="Medium" BorderWidth="0" WidthRequest="200" HeightRequest="40" Margin="10" BorderRadius="5" BackgroundColor="#0C335A" TextColor="White" />
+             <Button Text="Resumption" Image="ic_resume_W.png" Clicked="Button_Clicked3" VerticalOptions="Center"  FontSize="Medium" BorderWidth="0" WidthRequest="200" HeightRequest="40" Margin="10" BorderRadius="5" BackgroundColor="#0C335A" TextColor="White" />
+             <Button Text="Exit Permit" Image="ic_exit_permit_W.png" Clicked="Button_Clicked4" VerticalOptions="Center"  FontSize="Medium" BorderWidth="0" WidthRequest="200" HeightRequest="40" Margin="10" BorderRadius="5"  BackgroundColor="#0C335A" TextColor="White" />
+            
+               
+               
+            </StackLayout> 
+    </ContentPage.Content>
+</ContentPage>
+

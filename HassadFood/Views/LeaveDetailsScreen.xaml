@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             Title="Details"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             x:Class="HassadFood.Views.LeaveDetailsScreen">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Spacing="15" Padding="10">
+            <AbsoluteLayout x:Name="activityIndLayout" IsVisible="false" HorizontalOptions="Center" WidthRequest="15" Padding="0,0,10,0" VerticalOptions="Center" HeightRequest="15">
+                <ActivityIndicator WidthRequest="15" HeightRequest="15" x:Name="activityInd" HorizontalOptions="Center" IsRunning="false" IsVisible="false" />
+            </AbsoluteLayout>
+            <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+                <Label Text="Name : " FontSize="14" TextColor="#229ed8" LineBreakMode="NoWrap"  />
+                <Label Text="{Binding SelectedItemLeaveSummary.full_name}" FontSize="14" TextColor="Black" HorizontalOptions="FillAndExpand" LineBreakMode="WordWrap"  />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+                <Label Text="Absence Type : " FontSize="14" TextColor="#229ed8" HorizontalOptions="FillAndExpand" LineBreakMode="NoWrap"  />
+                <Label Text="{Binding SelectedItemLeaveSummary.absence_type}" FontSize="14" TextColor="Black" HorizontalOptions="FillAndExpand" LineBreakMode="WordWrap"  />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+                <Label Text="Absence Category : " FontSize="14" TextColor="#229ed8" HorizontalOptions="FillAndExpand" LineBreakMode="NoWrap"  />
+                <Label Text="{Binding SelectedItemLeaveSummary.absence_category}" FontSize="14" TextColor="Black" HorizontalOptions="FillAndExpand" LineBreakMode="WordWrap"  />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+                <Label Text="Absence Days : " FontSize="14" TextColor="#229ed8" HorizontalOptions="FillAndExpand" LineBreakMode="NoWrap"  />
+                <Label Text="{Binding SelectedItemLeaveSummary.absence_days}" FontSize="14" TextColor="Black" HorizontalOptions="FillAndExpand" LineBreakMode="WordWrap"  />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+                <Label Text="From Date : " FontSize="14" TextColor="#229ed8" HorizontalOptions="FillAndExpand" LineBreakMode="NoWrap"  />
+                <Label Text="{Binding SelectedItemLeaveSummary.start_date, StringFormat='{0:dd-MMM-yyyy}'}" FontSize="14" TextColor="Black" HorizontalOptions="FillAndExpand" LineBreakMode="WordWrap"  />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+                <Label Text="To Date : " FontSize="14" TextColor="#229ed8" HorizontalOptions="FillAndExpand" LineBreakMode="NoWrap"  />
+                <Label Text="{Binding SelectedItemLeaveSummary.end_date, StringFormat='{0:dd-MMM-yyyy}'}" FontSize="14" TextColor="Black" HorizontalOptions="FillAndExpand" LineBreakMode="WordWrap"  />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+                <Label Text="Absence Status : " FontSize="14" TextColor="#229ed8" HorizontalOptions="FillAndExpand" LineBreakMode="NoWrap"  />
+                <Label Text="{Binding SelectedItemLeaveSummary.absence_status}" FontSize="14" TextColor="Black" HorizontalOptions="FillAndExpand" LineBreakMode="WordWrap"  />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+                <Label Text="Approval Status : " FontSize="14" TextColor="#229ed8" HorizontalOptions="FillAndExpand" LineBreakMode="NoWrap"  />
+                <Label Text="{Binding SelectedItemLeaveSummary.approval_status}" FontSize="14" TextColor="Black" HorizontalOptions="FillAndExpand" LineBreakMode="WordWrap"  />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

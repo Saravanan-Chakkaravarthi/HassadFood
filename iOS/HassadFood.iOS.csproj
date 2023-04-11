@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{BE3A06EF-10A6-49E7-9647-679F6310DCA6}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>HassadFood.iOS</RootNamespace>
+    <AssemblyName>HassadFood.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Distribution: Hassad Food</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>51599</IOSDebuggerPort>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>HassadFoodInHouse</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Distribution: Hassad Food</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision>HassadFoodInHouse</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Distribution: Hassad Food</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision>HassadFoodInHouse</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>Apple Development: Sarfaraz Ahmed (456GAK3CB9)</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IOSDebuggerPort>26320</IOSDebuggerPort>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7s, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision></CodesignProvision>
+    <MtouchSdkVersion>16.2</MtouchSdkVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Json" />
+    <Reference Include="Plugin.Permissions">
+      <HintPath>..\packages\Plugin.Permissions.3.0.0.12\lib\xamarinios10\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="WebP.Touch">
+      <HintPath>..\packages\WebP.Touch.1.0.8\lib\Xamarin.iOS10\WebP.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media">
+      <HintPath>..\packages\Xam.Plugin.Media.4.0.1.1\lib\xamarinios10\Plugin.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.4.3.840\lib\Xamarin.iOS10\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.4.3.840\lib\Xamarin.iOS10\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.3.1.0.583944\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.3.1.0.583944\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\packages\Xamarin.Forms.3.1.0.583944\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.3.1.0.583944\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.4.3.840\lib\Xamarin.iOS10\FFImageLoading.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.4.3.840\lib\Xamarin.iOS10\FFImageLoading.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Essentials">
+      <HintPath>..\packages\Xamarin.Essentials.1.1.0\lib\xamarinios10\Xamarin.Essentials.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK-1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HassadFood\HassadFood.csproj">
+      <Project>{B53DB596-42B8-4774-91C2-BB2208642514}</Project>
+      <Name>HassadFood</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-1024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Renderer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Localize.cs" />
+    <Compile Include="PlatformCulture.cs" />
+    <Compile Include="Renderer\CustomEntryRenderer.cs" />
+    <Compile Include="Renderer\CustomFrameRenderer.cs" />
+    <Compile Include="Renderer\LayoutShadowEffect.cs" />
+    <Compile Include="Renderer\Credentials.cs" />
+    <Compile Include="Renderer\TouchID.cs" />
+    <Compile Include="Renderer\SavePDFRenderer.cs" />
+    <Compile Include="Renderer\CustomWebViewRenderer.cs" />
+    <Compile Include="Renderer\CustomDatePickerRenderer.cs" />
+    <Compile Include="Renderer\FCMNotification.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_action_side_menu.png" />
+    <BundleResource Include="Resources\ic_action_side_menu%402x.png" />
+    <BundleResource Include="Resources\ic_action_side_menu%403x.png" />
+    <BundleResource Include="Resources\ic_duty_visit.png" />
+    <BundleResource Include="Resources\ic_duty_visit%402x.png" />
+    <BundleResource Include="Resources\ic_duty_visit%403x.png" />
+    <BundleResource Include="Resources\ic_action_leave.png" />
+    <BundleResource Include="Resources\ic_action_leave%402x.png" />
+    <BundleResource Include="Resources\ic_action_leave%403x.png" />
+    <BundleResource Include="Resources\ic_action_logout.png" />
+    <BundleResource Include="Resources\ic_action_logout%402x.png" />
+    <BundleResource Include="Resources\ic_action_logout%403x.png" />
+    <BundleResource Include="Resources\Touch_ID.png" />
+    <BundleResource Include="Resources\ic_camera.png" />
+    <BundleResource Include="Resources\ic_camera%402x.png" />
+    <BundleResource Include="Resources\ic_camera%403x.png" />
+    <BundleResource Include="Resources\ic_check_box_outline_blank.png" />
+    <BundleResource Include="Resources\ic_check_box_outline_blank%402x.png" />
+    <BundleResource Include="Resources\ic_check_box_outline_blank%403x.png" />
+    <BundleResource Include="Resources\ic_check_box.png" />
+    <BundleResource Include="Resources\ic_check_box%402x.png" />
+    <BundleResource Include="Resources\ic_check_box%403x.png" />
+    <BundleResource Include="Resources\ic_delete_forever.png" />
+    <BundleResource Include="Resources\ic_delete_forever%402x.png" />
+    <BundleResource Include="Resources\ic_delete_forever%403x.png" />
+    <BundleResource Include="Resources\ic_gallery.png" />
+    <BundleResource Include="Resources\ic_gallery%402x.png" />
+    <BundleResource Include="Resources\ic_gallery%403x.png" />
+    <BundleResource Include="Resources\ic_amend.png" />
+    <BundleResource Include="Resources\ic_cancel.png" />
+    <BundleResource Include="Resources\ic_resume.png" />
+    <BundleResource Include="Resources\ic_amend%402x.png" />
+    <BundleResource Include="Resources\ic_cancel%402x.png" />
+    <BundleResource Include="Resources\ic_resume%402x.png" />
+    <BundleResource Include="Resources\ic_amend%403x.png" />
+    <BundleResource Include="Resources\ic_cancel%403x.png" />
+    <BundleResource Include="Resources\ic_resume%403x.png" />
+    <BundleResource Include="Resources\whitehassad.png" />
+    <BundleResource Include="Resources\ic_amend_notif.png" />
+    <BundleResource Include="Resources\ic_cancel_notif.png" />
+    <BundleResource Include="Resources\ic_duty_notif.png" />
+    <BundleResource Include="Resources\ic_leave_notif.png" />
+    <BundleResource Include="Resources\ic_permit_notif.png" />
+    <BundleResource Include="Resources\ic_resume_notif.png" />
+    <BundleResource Include="Resources\ic_amend_notif%402x.png" />
+    <BundleResource Include="Resources\ic_cancel_notif%402x.png" />
+    <BundleResource Include="Resources\ic_duty_notif%402x.png" />
+    <BundleResource Include="Resources\ic_leave_notif%402x.png" />
+    <BundleResource Include="Resources\ic_permit_notif%402x.png" />
+    <BundleResource Include="Resources\ic_resume_notif%402x.png" />
+    <BundleResource Include="Resources\ic_amend_notif%403x.png" />
+    <BundleResource Include="Resources\ic_cancel_notif%403x.png" />
+    <BundleResource Include="Resources\ic_duty_notif%403x.png" />
+    <BundleResource Include="Resources\ic_leave_notif%403x.png" />
+    <BundleResource Include="Resources\ic_permit_notif%403x.png" />
+    <BundleResource Include="Resources\ic_resume_notif%403x.png" />
+    <BundleResource Include="Resources\ic_exit_permit.png" />
+    <BundleResource Include="Resources\ic_exit_permit%402x.png" />
+    <BundleResource Include="Resources\ic_exit_permit%403x.png" />
+    <BundleResource Include="Resources\ic_approval.png" />
+    <BundleResource Include="Resources\ic_notification.png" />
+    <BundleResource Include="Resources\ic_approval%402x.png" />
+    <BundleResource Include="Resources\ic_notification%402x.png" />
+    <BundleResource Include="Resources\ic_approval%403x.png" />
+    <BundleResource Include="Resources\ic_notification%403x.png" />
+    <BundleResource Include="Resources\ic_down_arrow.png" />
+    <BundleResource Include="Resources\ic_down_arrow%402x.png" />
+    <BundleResource Include="Resources\ic_down_arrow%403x.png" />
+    <BundleResource Include="Resources\ic_search.png" />
+    <BundleResource Include="Resources\ic_search%402x.png" />
+    <BundleResource Include="Resources\ic_search%403x.png" />
+    <BundleResource Include="Resources\ic_request_status.png" />
+    <BundleResource Include="Resources\ic_request_status%402x.png" />
+    <BundleResource Include="Resources\ic_request_status%403x.png" />
+    <BundleResource Include="Resources\ic_appliaction_access_request.png" />
+    <BundleResource Include="Resources\ic_carloan.png" />
+    <BundleResource Include="Resources\ic_clubmembership.png" />
+    <BundleResource Include="Resources\ic_educationallowance.png" />
+    <BundleResource Include="Resources\ic_emp_letter_request.png" />
+    <BundleResource Include="Resources\ic_salary_advance.png" />
+    <BundleResource Include="Resources\ic_appliaction_access_request%402x.png" />
+    <BundleResource Include="Resources\ic_carloan%402x.png" />
+    <BundleResource Include="Resources\ic_clubmembership%402x.png" />
+    <BundleResource Include="Resources\ic_educationallowance%402x.png" />
+    <BundleResource Include="Resources\ic_emp_letter_request%402x.png" />
+    <BundleResource Include="Resources\ic_salary_advance%402x.png" />
+    <BundleResource Include="Resources\ic_appliaction_access_request%403x.png" />
+    <BundleResource Include="Resources\ic_carloan%403x.png" />
+    <BundleResource Include="Resources\ic_clubmembership%403x.png" />
+    <BundleResource Include="Resources\ic_educationallowance%403x.png" />
+    <BundleResource Include="Resources\ic_emp_letter_request%403x.png" />
+    <BundleResource Include="Resources\ic_salary_advance%403x.png" />
+    <BundleResource Include="Resources\ic_appliactionaccessrequest_not.png" />
+    <BundleResource Include="Resources\ic_carloan_not.png" />
+    <BundleResource Include="Resources\ic_clubmembership_not.png" />
+    <BundleResource Include="Resources\ic_educationallowance_not.png" />
+    <BundleResource Include="Resources\ic_empletterrequest_not.png" />
+    <BundleResource Include="Resources\ic_salaryadvance_not.png" />
+    <BundleResource Include="Resources\ic_appliactionaccessrequest_not%402x.png" />
+    <BundleResource Include="Resources\ic_carloan_not%402x.png" />
+    <BundleResource Include="Resources\ic_clubmembership_not%402x.png" />
+    <BundleResource Include="Resources\ic_educationallowance_not%402x.png" />
+    <BundleResource Include="Resources\ic_empletterrequest_not%402x.png" />
+    <BundleResource Include="Resources\ic_salaryadvance_not%402x.png" />
+    <BundleResource Include="Resources\ic_appliactionaccessrequest_not%403x.png" />
+    <BundleResource Include="Resources\ic_carloan_not%403x.png" />
+    <BundleResource Include="Resources\ic_clubmembership_not%403x.png" />
+    <BundleResource Include="Resources\ic_educationallowance_not%403x.png" />
+    <BundleResource Include="Resources\ic_empletterrequest_not%403x.png" />
+    <BundleResource Include="Resources\ic_salaryadvance_not%403x.png" />
+    <BundleResource Include="Resources\ic_air.png" />
+    <BundleResource Include="Resources\ic_air%402x.png" />
+    <BundleResource Include="Resources\ic_air%403x.png" />
+    <BundleResource Include="Resources\ic_subordinate.png" />
+    <BundleResource Include="Resources\ic_subordinate%402x.png" />
+    <BundleResource Include="Resources\ic_subordinate%403x.png" />
+    <BundleResource Include="Resources\ic_leave_balances.png" />
+    <BundleResource Include="Resources\ic_leave_balances%402x.png" />
+    <BundleResource Include="Resources\ic_leave_balances%403x.png" />
+    <BundleResource Include="Resources\Logo.png" />
+    <BundleResource Include="Resources\logout.png" />
+    <BundleResource Include="Resources\refresh.png" />
+    <BundleResource Include="Resources\power-off.png" />
+    <BundleResource Include="Resources\ic_action_leave_W.png" />
+    <BundleResource Include="Resources\ic_duty_visit_W.png" />
+    <BundleResource Include="Resources\ic_educationallowance_W.png" />
+    <BundleResource Include="Resources\ic_request_status_W.png" />
+    <BundleResource Include="Resources\ic_air_W.png" />
+    <BundleResource Include="Resources\ic_amend_W.png" />
+    <BundleResource Include="Resources\ic_appliaction_access_request_W.png" />
+    <BundleResource Include="Resources\ic_cancel_W.png" />
+    <BundleResource Include="Resources\ic_carloan_W.png" />
+    <BundleResource Include="Resources\ic_emp_letter_request_W.png" />
+    <BundleResource Include="Resources\ic_exit_permit_W.png" />
+    <BundleResource Include="Resources\ic_resume_W.png" />
+    <BundleResource Include="Resources\ic_salary_advance_W.png" />
+    <BundleResource Include="Resources\ic_clubmembership_W.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.targets')" />
+</Project>

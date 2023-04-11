@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="UsernameLabel" xml:space="preserve">
+    <value>اسم المستخدم</value>
+  </data>
+  <data name="PasswordLabel" xml:space="preserve">
+    <value>كلمه السر</value>
+  </data>
+  <data name="LoginButton" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="AlertText" xml:space="preserve">
+    <value>محزر</value>
+  </data>
+  <data name="OkText" xml:space="preserve">
+    <value>حسنا</value>
+  </data>
+  <data name="UsernameErrorMessage" xml:space="preserve">
+    <value>اسم المستخدم لا يمكن أن يكون فارغا.</value>
+  </data>
+  <data name="PasswordErrorMessage" xml:space="preserve">
+    <value>لا يمكن أن تكون كلمة المرور فارغة.</value>
+  </data>
+  <data name="HeaderButtonColor" xml:space="preserve">
+    <value>#0C335A</value>
+  </data>
+  <data name="Leave" xml:space="preserve">
+    <value>تطبيق الإجازة</value>
+  </data>
+  <data name="DutyVisit" xml:space="preserve">
+    <value>زيارة العمل</value>
+  </data>
+  <data name="ExitPermit" xml:space="preserve">
+    <value>تصريح خروج</value>
+  </data>
+  <data name="WorkList" xml:space="preserve">
+    <value>إخطارات</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>إعدادات</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>الخروج</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>حصاد موظف الخدمة الذاتية</value>
+  </data>
+  <data name="PerdiemAmount" xml:space="preserve">
+    <value>لكل دييم المبلغ</value>
+  </data>
+  <data name="ClassofTravel" xml:space="preserve">
+    <value>فئة السفر</value>
+  </data>
+  <data name="DateofTravel" xml:space="preserve">
+    <value>تاريخ السفر *</value>
+  </data>
+  <data name="FirstDayoftheDutyVisit" xml:space="preserve">
+    <value>اليوم الأول من الزيارة *</value>
+  </data>
+  <data name="LastDayoftheDutyVisit" xml:space="preserve">
+    <value>اليوم الأخير من الزيارة *</value>
+  </data>
+  <data name="ArrivalDate" xml:space="preserve">
+    <value>تاريخ الوصول *</value>
+  </data>
+  <data name="ExitPermitLbl" xml:space="preserve">
+    <value>تصريح خروج *</value>
+  </data>
+  <data name="DestinationRoute" xml:space="preserve">
+    <value>الوجهة / الطريق *</value>
+  </data>
+  <data name="Budget" xml:space="preserve">
+    <value>ميزانية *</value>
+  </data>
+  <data name="PurposeofVisitRemarks" xml:space="preserve">
+    <value>الغرض من الزيارة / الملاحظات *</value>
+  </data>
+  <data name="Accomodation" xml:space="preserve">
+    <value>الإقامة *</value>
+  </data>
+  <data name="Ticket" xml:space="preserve">
+    <value>تذكرة *</value>
+  </data>
+  <data name="PerdiemPaidbyHost" xml:space="preserve">
+    <value>لكل دييم المدفوعة من قبل المضيف *</value>
+  </data>
+  <data name="SubmissionDate" xml:space="preserve">
+    <value>تاريخ التقديم</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>خضع</value>
+  </data>
+  <data name="FlightDateRq" xml:space="preserve">
+    <value>تاريخ الرحلة *</value>
+  </data>
+  <data name="ReturnDate" xml:space="preserve">
+    <value>تاريخ العودة *</value>
+  </data>
+  <data name="AirlineFlightNumber" xml:space="preserve">
+    <value>رقم الرحلة الجوية</value>
+  </data>
+  <data name="FlightTravelTime" xml:space="preserve">
+    <value>رحلة السفر الوقت</value>
+  </data>
+  <data name="Justification" xml:space="preserve">
+    <value>مبرر</value>
+  </data>
+  <data name="AppliedLeaveDates" xml:space="preserve">
+    <value>تواريخ الإجازات المطبقة *</value>
+  </data>
+  <data name="NewLeaveStartDate" xml:space="preserve">
+    <value>تاريخ بدء الإجازة الجديد *</value>
+  </data>
+  <data name="NewLeaveEndDate" xml:space="preserve">
+    <value>تاريخ انتهاء الإجازة الجديد *</value>
+  </data>
+  <data name="NewTravelDate" xml:space="preserve">
+    <value>تاريخ السفر الجديد</value>
+  </data>
+  <data name="JustificationRq" xml:space="preserve">
+    <value>مبرر *</value>
+  </data>
+  <data name="LeavetobeCancelled" xml:space="preserve">
+    <value>اتركها للإلغاء *</value>
+  </data>
+  <data name="AdditionalComments" xml:space="preserve">
+    <value>تعليقات اضافية</value>
+  </data>
+  <data name="LeaveStatus" xml:space="preserve">
+    <value>ترك الوضع</value>
+  </data>
+  <data name="LeaveType" xml:space="preserve">
+    <value>نوع الإجازة *</value>
+  </data>
+  <data name="LeaveCategory" xml:space="preserve">
+    <value>ترك الفئة</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>تاريخ البدء *</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>تاريخ الانتهاء</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>وقت البدء</value>
+  </data>
+  <data name="EndTime" xml:space="preserve">
+    <value>وقت النهاية</value>
+  </data>
+  <data name="TotalDays" xml:space="preserve">
+    <value>مجموع الأيام</value>
+  </data>
+  <data name="TotalHours" xml:space="preserve">
+    <value>مجموع الساعات</value>
+  </data>
+  <data name="CalculateDuration" xml:space="preserve">
+    <value>حساب المدة</value>
+  </data>
+  <data name="ReplacedBy" xml:space="preserve">
+    <value>وحل محله</value>
+  </data>
+  <data name="MinChars" xml:space="preserve">
+    <value>(حد أدنى 3 أحرف)</value>
+  </data>
+  <data name="LeaveAdvance" xml:space="preserve">
+    <value>ترك تقدم</value>
+  </data>
+  <data name="AirTicket" xml:space="preserve">
+    <value>تذكرة طيران</value>
+  </data>
+  <data name="FlightDate" xml:space="preserve">
+    <value>تاريخ الرحلة</value>
+  </data>
+  <data name="RemarksRq" xml:space="preserve">
+    <value>ملاحظات *</value>
+  </data>
+  <data name="ApprovedLeaveDatesRq" xml:space="preserve">
+    <value>تواريخ الإجازة المعتمدة *</value>
+  </data>
+  <data name="ResumptionDate" xml:space="preserve">
+    <value>تاريخ الاستئناف</value>
+  </data>
+  <data name="EmployeeRequest" xml:space="preserve">
+    <value>طلب موظف</value>
+  </data>
+  <data name="PermitRequest" xml:space="preserve">
+    <value>طلب تصريح</value>
+  </data>
+  <data name="AmendmentRequest" xml:space="preserve">
+    <value>طلب تعديل</value>
+  </data>
+  <data name="CancellationRequest" xml:space="preserve">
+    <value>الغاء الطلب</value>
+  </data>
+  <data name="LeaveRequest" xml:space="preserve">
+    <value>ترك الطلب</value>
+  </data>
+  <data name="ResumeRequest" xml:space="preserve">
+    <value>استئناف الطلب</value>
+  </data>
+  <data name="LeaveRequestNote" xml:space="preserve">
+    <value>ملاحظة: حدد تأكيد إذا كنت متأكدًا من تواريخ غيابك ، وإلا حدد المخطط. حدد نوع الإجازة ، وأدخل أي معلومات أخرى تريد تسجيلها لطلبك. يمكنك اختيار زر "حساب المدة" لرؤية عدد الأيام أو الساعات التي تطلبها.</value>
+  </data>
+  <data name="PermitRequestNote" xml:space="preserve">
+    <value>ملاحظة: تصريح الخروج صالح لمدة 24 ساعة فقط (من: 00:01 صباحًا إلى 23.59 مساءً من تاريخ السفر المذكور) ، في حالة حدوث أي تغيير في تاريخ السفر ووقته. يرجى التقدم بطلب للحصول على تصاريح خروج جديدة من خلال طلب تصريح الخروج في خدمة Oracle الذاتية أو الاتصال بالموارد البشرية.</value>
+  </data>
+  <data name="EmployeeRequestNote" xml:space="preserve">
+    <value>ملاحظة: عند الانتهاء من زيارة الواجب ، يرجى تسليم نسخة الصعود إلى الطائرة الأصلية أو جواز السفر إلى الموارد البشرية للمعالجة. هذه الخطوة هي شرط أساسي لمعالجة الدفع.</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>تعليقات</value>
+  </data>
+  <data name="LeaveAmendment" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="LeaveCancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="LeaveResume" xml:space="preserve">
+    <value>استئناف</value>
+  </data>
+</root>
